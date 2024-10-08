@@ -68,6 +68,7 @@ const UpcomingWebinbars = () => {
               link: "/",
             }))}
           />
+          
         </div>
         <div className="mt-10 text-center">
           <Link

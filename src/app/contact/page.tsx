@@ -1,17 +1,7 @@
-"use client";
-
+import FormComponent from "@/components/FormComponent";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import React, { FormEvent, FormEventHandler, useState } from "react";
 
 const page = () => {
-  const [email, setEmail] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log("Submitted : ", { email, message });
-  };
-
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-12 pt-[7rem] relative">
       <BackgroundBeams className="top-0 left-0 w-full h-full z-0" />
@@ -25,30 +15,7 @@ const page = () => {
           programs, or events. Reach out and let us know how we can assist you
           in your musical journey.
         </p>
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-          <input
-            type="email"
-            placeholder="Type your email here"
-            value={email || ""}
-            onChange={(e) => setEmail(e.target.value)}
-            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full p-4 bg-neutral-950 placeholder:text-neutral-700"
-            required
-          />
-          <textarea
-            value={message || ""}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Your message"
-            className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full p-4 bg-neutral-950 placeholder:text-neutral-700"
-            rows={5}
-            required
-          />
-          <button
-            type="submit"
-            className="px-6 py-2 rounded-lg bg-teal-500 text-white font-medium hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
-          >
-            Send Message
-          </button>
-        </form>
+        <FormComponent />
       </div>
     </div>
   );
